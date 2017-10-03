@@ -5,10 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.infosys.cameronthompson.integerspiral.Constants;
 import com.infosys.cameronthompson.integerspiral.SpiralService;
 
 import junit.framework.Assert;
 
+/**
+ * Tests the spiralService class
+ * 
+ * @author Cameron Thompson
+ *
+ */
 public class SpiralServiceTest {
 	private SpiralService spiralService;
 
@@ -20,9 +27,9 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_SimpleRight() {
 		String expected =
-				" 6 7 8\r\n" +
-				" 5 0 1\r\n" +
-				" 4 3 2\r\n";
+				"6 7 8\r\n" +
+				"5 0 1\r\n" +
+				"4 3 2\r\n";
 		
 		String result = spiralService.createSpiral("8", true);
 		
@@ -32,9 +39,9 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_SimpleLeft() {
 		String expected = 
-				" 8 7 6\r\n" + 
-				" 1 0 5\r\n" + 
-				" 2 3 4\r\n";
+				"8 7 6\r\n" + 
+				"1 0 5\r\n" + 
+				"2 3 4\r\n";
 		
 		String result = spiralService.createSpiral("8", false);
 		
@@ -52,7 +59,7 @@ public class SpiralServiceTest {
 		}
 		
 		assertNotNull("Did not throw an exception", errorMessage);
-		assertEquals("Exception did not contain the expected message", SpiralService.ERR_MSG_NULL, errorMessage);
+		assertEquals("Exception did not contain the expected message", Constants.ERR_MSG_NULL, errorMessage);
 	}
 
 	@Test
@@ -66,7 +73,7 @@ public class SpiralServiceTest {
 		}
 
 		assertNotNull("Did not throw an exception", errorMessage);
-		assertEquals("Exception did not contain the expected message", SpiralService.ERR_MSG_EMPTY, errorMessage);
+		assertEquals("Exception did not contain the expected message", Constants.ERR_MSG_EMPTY, errorMessage);
 	}
 
 	@Test
@@ -80,7 +87,7 @@ public class SpiralServiceTest {
 		}
 
 		assertNotNull("Did not throw an exception", errorMessage);
-		assertEquals("Exception did not contain the expected message", SpiralService.ERR_MSG_NEGATIVE, errorMessage);
+		assertEquals("Exception did not contain the expected message", Constants.ERR_MSG_NEGATIVE, errorMessage);
 	}
 
 	@Test
@@ -94,14 +101,14 @@ public class SpiralServiceTest {
 		}
 
 		assertNotNull("Did not throw an exception", errorMessage);
-		assertEquals("Exception did not contain the expected message", SpiralService.ERR_MSG_NOT_INTEGER, errorMessage);
+		assertEquals("Exception did not contain the expected message", Constants.ERR_MSG_NOT_INTEGER, errorMessage);
 	}
 
 	@Test
 	public void createSpiralTest_Success_SmallRight() {
 		String expected = 
-				" 0 1\r\n" + 
-				" 3 2\r\n";
+				"0 1\r\n" + 
+				"3 2\r\n";
 		
 		String result = spiralService.createSpiral("3", true);
 		
@@ -111,8 +118,8 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_SmallLeft() {
 		String expected = 
-				" 1 0\r\n" + 
-				" 2 3\r\n";
+				"1 0\r\n" + 
+				"2 3\r\n";
 		
 		String result = spiralService.createSpiral("3", false);
 		
@@ -122,8 +129,8 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_Smaller() {
 		String expected = 
-				" 0 1\r\n" + 
-				"   2\r\n";
+				"0 1\r\n" + 
+				"  2\r\n";
 		
 		String result = spiralService.createSpiral("2", true);
 		
@@ -133,8 +140,8 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_EvenSmaller() {
 		String expected = 
-				" 0 1\r\n" + 
-				"    \r\n";
+				"0 1\r\n" + 
+				"   \r\n";
 		
 		String result = spiralService.createSpiral("1", true);
 		
@@ -144,7 +151,7 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_Smallest() {
 		String expected = 
-				" 0\r\n";
+				"0\r\n";
 		
 		String result = spiralService.createSpiral("0", true);
 		
@@ -154,11 +161,11 @@ public class SpiralServiceTest {
 	@Test
 	public void createSpiralTest_Success_UnevenColumns() {
 		String expected = 
-				"               \r\n" + 
-				" 19  6  7  8  9\r\n" + 
-				" 18  5  0  1 10\r\n" + 
-				" 17  4  3  2 11\r\n" + 
-				" 16 15 14 13 12\r\n";
+				"              \r\n" + 
+				"19  6  7  8  9\r\n" + 
+				"18  5  0  1 10\r\n" + 
+				"17  4  3  2 11\r\n" + 
+				"16 15 14 13 12\r\n";
 		
 		String result = spiralService.createSpiral("19", true);
 		

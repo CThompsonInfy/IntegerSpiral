@@ -11,6 +11,8 @@ import com.infosys.cameronthompson.integerspiral.SpiralService;
 
 /**
  * Servlet implementation class IntegerSpiralServlet
+ * 
+ * @author Cameron Thompson
  */
 @WebServlet("/DoSpiral")
 public class IntegerSpiralServlet extends HttpServlet {
