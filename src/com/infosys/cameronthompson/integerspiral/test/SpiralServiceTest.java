@@ -1,11 +1,11 @@
-package com.infosys.cameron_thompson.integer_spiral.test;
+package com.infosys.cameronthompson.integerspiral.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.infosys.cameron_thompson.integer_spiral.SpiralService;
+import com.infosys.cameronthompson.integerspiral.SpiralService;
 
 import junit.framework.Assert;
 

@@ -1,4 +1,4 @@
-package com.infosys.cameron_thompson.integer_spiral;
+package com.infosys.cameronthompson.integerspiral;
 
 public class SpiralService {
 	
